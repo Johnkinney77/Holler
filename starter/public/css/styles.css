@@ -1,0 +1,103 @@
+body {
+  background-color: #efefef;
+}
+
+.home-page-up {
+  position: relative;
+  bottom: 500px;
+}
+.top {
+  position: absolute;
+  top: 0;
+  left:0;
+  right: 0;
+  height: 75px;
+}
+
+.navbar-default {
+  background-color: rgba(255,255,255,.8);
+}
+#header-image {
+  width: 100%;
+}
+
+.container.text-center {
+  position: relative;
+  top: 10px;
+}
+
+#logo {
+  font-family: 'Pacifico', cursive;
+  font-size: 75px;
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+
+#logoA{
+  text-decoration: none;  
+}
+
+.links{
+  display: inline;
+  width: auto;
+  border-bottom: 1px solid #337ab7;
+  padding-bottom: 10px;
+}
+.links a {
+  padding: 0 50px 10px 50px;
+  text-decoration: none;
+  color: #337ab7;
+}
+
+.links a:hover {
+  border-bottom: 5px solid #337ab7;
+}
+
+.navbar-nav {
+  margin: 0 auto;
+  float: none;
+  width: 541px;
+  position: relative;
+}
+
+.navbar-nav li {
+  padding: 0 50px;
+  border-bottom: 1px solid #337ab7;
+}
+
+.navbar-nav li:hover{
+  border-bottom: 5px solid #337ab7;
+}
+
+.navbar-toggle {
+  margin: 20px;
+  position: absolute;
+  right: 0 ;
+  top: 0;
+}
+
+.navbar-default .navbar-collapse{
+  border: none;
+}
+
+@media only screen and (max-width: 768px){
+  .navbar-nav {
+    top: 0px;
+    width: auto;
+    font-weight: 800;
+    background-color: rgba(255,255,255,.8);
+  }
+  .navbar-nav li a {
+    text-align: center;
+  }
+  .navbar-nav li:hover{
+    background-color: #337ab7;
+    color: white;
+    border-bottom: 1px solid #337ab7;
+  }
+  .navbar-collapse {
+    padding: 0;
+  }
+
+
+}
