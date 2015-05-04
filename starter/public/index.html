@@ -5,65 +5,160 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
   <link href="./css/styles.css" rel="stylesheet" type="text/css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/oj.mustache/0.7.2/oj.mustache.min.js"></script>
+  <script src="/bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="/bower_components/jquery-ui/jquery-ui.js"></script>
+  <script src="/bower_components/underscore/underscore-min.js"></script>
+  <script type="text/javascript" src="/bower_components/mustache/mustache.js"></script>
+  <script type="text/javascript" src="/bower_components/Chart.js/Chart.min.js"></script>
   <script src="./js/app.js"></script>
 </head>
 <body>
-  <div class="fluid">
-    <img class="img-responsive" src="http://villalevistyle.com/wp-content/uploads/2014/09/Contact.jpg">
+  <div id="header" class="fluid">
 
-
-          <!-- <nav>
-            <div class="header logo">
-              <a href='/'><h1 id="logo">Holler</h1></a>
-            </div>
-            <div class="links">
-              <a href="#/contacts">Contacts</a>
-              <a href="#/analytics">Analytics</a>
-              <a href="#/about">About</a>
-            </div>
-          </nav>
-          <nav class="navbar navbar-default"> -->
-
-            <nav class="navbar-default navbar-fixed-top fluid top">
-                <a id="logoA" href="/"><h1 id="logo"class="text-center">Holler</h1></a>
-                <!-- Brand and toggle get grouped for better mobile display -->
-                <div class="navbar-header">
-                  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                  </button>
-                </div>
-
-                <!-- Collect the nav links, forms, and other content for toggling -->
-                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                  <ul class="nav navbar-nav">
-                    <li><a href="#/contacts">Contacts</a></li>
-                    <li><a href="#/analytics">Analytics</a></li>
-                    <li><a href="#/about">About</a></li>
-                  </ul>
-                </div><!-- /.navbar-collapse -->
-              
-            </nav> 
-                        
-    <!-- <div class="container">
-      <div class="row home-page-up">
-        <div class="col-xs-4">
-          <div class=" white col-xs-12 text-center"><h1>Test Copy</h1></div>
+    <nav class="navbar-default navbar-fixed-top fluid top">
+        <a id="logoA" href="/"><h1 id="logo"class="text-center">Holler</h1></a>
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
         </div>
-        <div class="col-xs-4 test">
-          <div class=" white col-xs-12 text-center"><h1>Test Copy</h1></div>
-        </div>
-        <div class="col-xs-4 test">
-          <div class=" white col-xs-12 text-center"><h1>Test Copy</h1></div>
-        </div>
-      </div>
-    </div> -->
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li><a href="#/contacts">Contacts</a></li>
+            <li><a href="#/analytics">Analytics</a></li>
+            <li><a href="#/about">About</a></li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+    </nav> 
   </div><!-- background image fluid end -->
+  <div id="edit-contact"></div>
+  <div class="container" id="main-content">
+
+  </div>
+
+
+  <!-- <h1 class="contacts col-sm-10" id="category-title">All Contacts</h1> -->
+  <script type="text/template" id="contactTemplate">
+  <ul class="contacts col-sm-10" id="sortable">
+    {{#contacts}}
+    <div class="{{category_id}}" id="{{id}}">
+      <li class="ui-state-default" id="droppable">
+        <div class="button-fade">
+          <button data-action="delete-contact" class="cancel button see">X</button>
+          <div data-categories="{{category_id}}" class="single-contact" id="{{id}}">
+            <img data-value="url" src="{{image_url}}">
+            <div id="contact-information">
+              <h3 data-value="name">{{name}}</h3>
+              <p data-value="email">{{email}}</p>
+              <p data-value="phone">{{phone}}</p>
+              <p data-value="city">{{city}}</p>
+            </div>
+          </div>
+          <div class="single-contact-buttons button see">
+            <button data-action="edit" class="edit">Edit</button>
+            <button data-action="remove-cat" class="remove">Remove From Category</button>
+          </div>
+        </div>
+      </li>
+    </div>
+    {{/contacts}}
+  </ul>
+  </script>
+  <script type="text/template" id="singleContactTemplate">
+    <div class="{{category_id}}" id="{{id}}">
+      <li class="ui-state-default" id="droppable">
+        <div class="button-fade">
+          <button data-action="delete-contact" class="cancel button see">X</button>
+          <div data-categories="{{category_id}}" class="single-contact" id="{{id}}">
+            <img data-value="url" src="{{image_url}}">
+            <div id="contact-information">
+              <h3 data-value="name">{{name}}</h3>
+              <p data-value="email">{{email}}</p>
+              <p data-value="phone">{{phone}}</p>
+              <p data-value="city">{{city}}</p>
+            </div>
+          </div>
+          <div class="single-contact-buttons button see">
+            <button data-action="edit" class="edit">Edit</button>
+            <button data-action="remove-cat" class="remove">Remove From Category</button>
+          </div>
+        </div>
+      </li>
+    </div>
+  </script>
+  <script type="text/template" id="newContactTemplate">
+    <div class="snaptarget">
+      <li class="ui-state-default">
+        <div class="single-contact">
+          <button data-action="cancel-new-contact" class="cancel">X</button>
+          <img id="placeholderImg" src="http://www.golenbock.com/wp-content/uploads/2015/01/placeholder-user.png">
+          <div id="filler"></div>
+          <div class="new-contact-information">
+            <input data-input="url" placeholder="Img URL">
+            <input data-input="name" placeholder="Full Name">
+            <input data-input="email" placeholder="Email">
+            <input data-input="phone" placeholder="Phone">
+            <input data-input="city" placeholder="City">
+            <button data-action="submit-new-contact">Done</button>
+          </div>
+        </div>
+      </li>
+    </div>
+  </script>
+  <script type="text/template" id="asideTemplate">
+    <aside class="col-xs-12 col-sm-2">
+      <button data-action="new-category">New Category</button>
+      <button data-action="new-contact">New Contact</button>
+      <ul>
+        <a href="#/contacts" class="All">
+          <li class="carTran">
+            <div class="blue-hover">
+              <p>All</p>
+            </div>
+          </li>
+        </a>
+      {{#categories}}
+        <a href="#/contacts" class="{{name}}">
+          <li class="droppable">
+              <div class="blue-hover">
+                <p>{{name}}</p>
+              </div>
+          </li>
+        </a>
+      {{/categories}}
+      </ul>
+    </aside>
+  </script>
+  <script type="text/template" id="singleCategory">
+    <a href="#/contacts" class="{{id}}">
+      <li class="droppable">
+          <div class="blue-hover">
+            <p>{{name}}</p>
+          </div>
+      </li>
+    </a>
+  </script>
+  <script type="text/template" id="editContactForm" >
+    <div class="editContactFormContainer" id="{{id}}">
+      <input data-input="name" value="{{name}}">
+      <input data-input="email" value="{{email}}">
+      <input data-input="phone" value="{{phone}}">
+      <input data-input="city" value="{{city}}">
+      <input data-input="url" value="{{url}}">
+      <button>Submit</button>
+    </div>
+  </script>
+
+
+
   <script src="https://rawgit.com/flatiron/director/master/build/director.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 </body>
