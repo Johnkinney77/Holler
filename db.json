@@ -1,0 +1,103 @@
+{
+  "categories": [
+    {
+      "id": 1,
+      "name": "Friends"
+    },
+    {
+      "id": 2,
+      "name": "Business"
+    },
+    {
+      "id": 3,
+      "name": "Relatives"
+    },
+    {
+      "name": "Batties",
+      "id": 4
+    }
+  ],
+  "contacts": [
+    {
+      "id": 2,
+      "category_id": "snaptarget All Friends Relatives Business",
+      "name": "Harley Caitlin",
+      "city": "New York City",
+      "phone": "312-345-5421",
+      "email": "NJP3000@hotmail.com",
+      "image_url": "https://media.licdn.com/mpr/mpr/shrink_200_200/p/3/005/080/27d/0d14159.jpg"
+    },
+    {
+      "id": 4,
+      "category_id": "snaptarget All ui-sortable-handle",
+      "name": "Neel Petel",
+      "city": "New York City",
+      "phone": "312-345-5421",
+      "email": "NJP3000@hotmail.com",
+      "image_url": "https://media.licdn.com/media/p/8/000/1d5/2c1/1b08b8b.jpg"
+    },
+    {
+      "category_id": "snaptarget All Batties",
+      "name": "Xavier Fernandez",
+      "city": "San Jose",
+      "phone": "555-555-5555",
+      "email": "XavierIsAwesome@gmail.com",
+      "image_url": "https://media.licdn.com/mpr/mpr/shrink_200_200/AAEAAQAAAAAAAAK4AAAAJDNmZDcyOTE0LTRiMDYtNDdkOS1hZTY5LTEyMWMxOTZlYzkxOA.jpg",
+      "id": 9
+    },
+    {
+      "category_id": "snaptarget ui-sortable-handle All",
+      "name": "Gabby Losch",
+      "city": "Middleton VT",
+      "phone": "555-555-5555",
+      "email": "GabsMaTabs@gmail.com",
+      "image_url": "https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAALHAAAAJGRhOWU3NzQyLTM0MmMtNDEzMS1iODJjLTRkOGFkYjlkYmNlMw.jpg",
+      "id": 10
+    },
+    {
+      "category_id": "snaptarget All Batties",
+      "name": "Julia Becker",
+      "city": "New York City",
+      "phone": "555-555-5555",
+      "email": "JuliaIsCoolia@gmail.com",
+      "image_url": "https://media.licdn.com/mpr/mpr/shrink_200_200/p/1/005/0a3/16c/0f76d1b.jpg",
+      "id": 11
+    },
+    {
+      "category_id": "snaptarget ui-sortable-handle All",
+      "name": "Jeffrey Konowitch",
+      "city": "New York City",
+      "phone": "555-555-5555",
+      "email": "JeffGotACleft@gmail.com",
+      "image_url": "https://media.licdn.com/mpr/mpr/shrink_200_200/p/2/000/1a6/1a7/24b014b.jpg",
+      "id": 13
+    },
+    {
+      "category_id": "snaptarget ui-sortable-handle All",
+      "name": "Liz Fonseca",
+      "city": "New York City",
+      "phone": "555-555-5555",
+      "email": "LizIsTheBiz@gmail.com",
+      "image_url": "https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAANNAAAAJGI0MmNlYzlhLTg2NjctNGFjMS1iYTVkLWVmZDkzMmJlZDAzMA.jpg",
+      "id": 14
+    },
+    {
+      "category_id": "snaptarget All Business",
+      "name": "Anna Rankin",
+      "city": "Tillson NY",
+      "phone": "555-555-5555",
+      "email": "AnnaIsBananas@gmail.com",
+      "image_url": "https://media.licdn.com/mpr/mpr/shrink_200_200/AAEAAQAAAAAAAAICAAAAJDM4NmVjOTgxLTc0N2EtNDFmNy04ODQxLTExNTg1MGE3Y2IwZA.jpg",
+      "id": 15
+    },
+    {
+      "category_id": "snaptarget All Friends",
+      "name": "Daniel",
+      "city": "New York",
+      "phone": 32223331,
+      "email": "croatianSensation@cro.com",
+      "image_url": "https://pbs.twimg.com/profile_images/1841987304/DSCF00024.jpg",
+      "id": 16
+    }
+  ]
+}
