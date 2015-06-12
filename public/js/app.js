@@ -385,7 +385,7 @@ main.on('click', 'aside a', function(){
   router.init()
 
   //Couldn't get router to work for the home page so I did this little extra bit of code
-  if(url === "http://localhost:3000/"){
+  if(url === "http://104.236.28.232:3000/"){
     home()
   }
 
