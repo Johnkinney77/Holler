@@ -34,6 +34,8 @@ main.on('click','[data-action="save"]', function(){
     var html = Mustache.render(singleCategory, {category: categoryName});
     main.find('aside ul').append(html)
     $(element).remove()
+    console.log('hi')
+    makeDraggable()
   });
 })
 
